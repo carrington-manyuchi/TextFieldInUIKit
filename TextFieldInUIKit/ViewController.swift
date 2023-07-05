@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     
     private let myTextField: UITextField = {
         
-        let  textField = UITextField(frame: CGRect(x: 16, y: 243, width: 343, height: 200))
+        let  textField = UITextField(frame: CGRect(x: 16, y: 243, width: 343, height: 50))
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.font = UIFont.systemFont(ofSize: 20, weight: .medium)
         textField.textAlignment = NSTextAlignment.center
@@ -24,8 +24,13 @@ class ViewController: UIViewController {
         textField.placeholder = "Please type something"
         textField.isSecureTextEntry = true
         textField.backgroundColor = UIColor(white: 0.75, alpha: 0.75)
-        textField.leftView = UILabel(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
-    textField.leftViewMode = .always
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 25, height: 25))
+        label.backgroundColor = .black
+        textField.leftView = label
+        
+        //textField.leftView = UILabel(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
+        textField.leftViewMode = UITextField.ViewMode.always
+        
         return textField
     }()
 
